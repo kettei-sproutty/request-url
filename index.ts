@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import type { IncomingMessage } from 'http'
 
 type UrlObj = {
