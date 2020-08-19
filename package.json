@@ -1,0 +1,14 @@
+{
+  "name": "request-url",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kettei-sproutty/request-url.git",
+  "author": "kettei <ketteisproutty@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.6.0",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}
