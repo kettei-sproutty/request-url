@@ -5,7 +5,7 @@ Extract request url from `IncomingMessage (http)`
 ## Usage
 
 ```
-import getHost from 'request-url'
+import getHost from 'get-url-request'
 const { host, protocol, baseUrl } = getHost(req)
 ```
 

@@ -1,11 +1,13 @@
 {
-  "name": "request-url",
-  "version": "1.0.0",
+  "name": "get-url-request",
+  "version": "1.0.1",
   "main": "index.ts",
   "repository": "https://github.com/kettei-sproutty/request-url.git",
   "author": "kettei <ketteisproutty@gmail.com>",
   "license": "MIT",
-  "files": [ "lib/**/*" ],
+  "files": [
+    "lib/**/*"
+  ],
   "devDependencies": {
     "@types/node": "^14.6.0",
     "prettier": "^2.0.5",
