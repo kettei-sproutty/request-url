@@ -7,11 +7,16 @@ type UrlObj = {
   baseUrl: string
 }
 
-const getHost = (req?: IncomingMessage): UrlObj => {
+const getHost = (req?: IncomingMessage, ssl?: boolean): UrlObj => {
   const url: UrlObj = {
     protocol: 'http',
     host: '',
     baseUrl: '',
+  }
+
+  if (!req && window) {
+    url.host = window.location.host
+    url.protocol = ssl ? 'https' : window.location.protocol as UrlObj['protocol'] 
   }
 
   if (req && req.headers['host']) {
@@ -22,7 +27,9 @@ const getHost = (req?: IncomingMessage): UrlObj => {
     url.host = req.headers['x-forwarded-host']
   }
 
-  if (req && req.headers['x-forwarded-proto'] && typeof req.headers['x-forwarded-proto'] === 'string') {
+  if (ssl) {
+    url.protocol = 'https'
+  } else if (req && req.headers['x-forwarded-proto'] && typeof req.headers['x-forwarded-proto'] === 'string') {
     url.protocol = req.headers['x-forwarded-proto'] as UrlObj['protocol']
   } else {
     const protocolCheck = /localhost?|127.0.0.1?/

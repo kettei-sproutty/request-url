@@ -1,6 +1,6 @@
 {
   "name": "get-url-request",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "repository": "https://github.com/kettei-sproutty/request-url.git",
   "author": "kettei <ketteisproutty@gmail.com>",
   "license": "MIT",
@@ -15,7 +15,10 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "build": "tsc",
-    "push": "yarn publish"
-  }
+    "build": "tsc"
+  },
+  "keywords": [
+    "request",
+    "get url"
+  ]
 }
