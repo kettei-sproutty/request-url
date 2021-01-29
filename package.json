@@ -21,7 +21,7 @@
     "clean": "rimraf -rf dist",
     "compile": "tsc --build",
     "build": "yarn clean && yarn compile",
-    "copy": "copyfiles .npmrc ./dist && copyfiles package.json ./dist && copyfiles readme.md ./dist",
+    "copy": "copyfiles package.json ./dist && copyfiles readme.md ./dist",
     "prepub": "yarn format && yarn build && yarn copy"
   },
   "keywords": [
