@@ -5,17 +5,24 @@
   "author": "kettei <ketteisproutty@gmail.com>",
   "license": "MIT",
   "files": [
-    "lib/**/*"
+    "main/**/*"
   ],
-  "main": "./lib/index.js",
+  "main": "./main/index.js",
   "devDependencies": {
     "@types/node": "^14.6.0",
+    "copyfiles": "^2.4.1",
     "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "build": "tsc"
+    "format": "prettier --write .",
+    "clean": "rimraf -rf dist",
+    "compile": "tsc --build",
+    "build": "yarn clean && yarn compile",
+    "copy": "copyfiles .npmrc ./dist && copyfiles package.json ./dist && copyfiles readme.md ./dist",
+    "prepub": "yarn format && yarn build && yarn copy"
   },
   "keywords": [
     "request",
